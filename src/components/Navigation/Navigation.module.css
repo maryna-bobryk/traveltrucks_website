@@ -1,0 +1,48 @@
+.nav {
+  display: flex;
+  gap: 32px;
+  padding: 24px 0;
+}
+
+.nav__menu {
+  position: relative;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+  color: var(--main);
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.nav__menu::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -2px;
+  transform: translateX(-50%) scaleY(0);
+  width: 8px;
+  height: 8px;
+  background-color: var(--button-hover);
+  border-radius: 50%;
+  transform-origin: bottom;
+  transition: transform 0.3s ease;
+}
+
+.nav__menu:hover,
+.nav__menu:focus-visible,
+.nav__menu.active {
+  color: var(--button-hover);
+  text-decoration: none;
+}
+
+.nav__menu:hover::after,
+.nav__menu:focus-visible::after,
+.nav__menu.active::after {
+  transform: translateX(-50%) scaleY(1);
+}
+
+.nav__menu:active {
+  transform: translateY(1px);
+}
